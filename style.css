@@ -4,6 +4,9 @@
     box-sizing: border-box;
 
 }
+p{
+    color: rgb(0, 154, 255);
+}
 body{
     display: flex;
     justify-content: center;
@@ -25,7 +28,16 @@ body{
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
+    animation: anim1 3s linear infinite; */
     transform: rotateX(-20deg) rotateY(25deg);
+}
+@keyframes anim1{
+    0%{
+        transform: rotateX(-20deg) rotateY(360deg)
+    }
+    100%{
+        transform: rotateX(-20deg) rotateY(0deg)
+    }
 }
 .cube .big span{
     position: absolute;
@@ -35,4 +47,100 @@ body{
     transform-style: preserve-3d;
     transform: rotateY(calc(90deg*var(--i)))translateZ(299px);
     transition: .5s;
+}
+
+.cube .big span{
+    background: transparent;
+    border: 20px solid purple;
+    box-shadow: 0px 0px 25px black;
+}
+div.cube div.big span.top{
+    transform: rotateX(90deg)
+    translateZ(305px);
+
+}
+
+.cube .big span.bottom{
+    transform: rotateX(90deg)
+    translateZ(-305px);
+
+
+}
+.cube .big .top::before{
+    content: "";
+    position: absolute;
+    inset: -50px;
+    transform: translateZ(-650px);
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(60px)
+}
+.cube2{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    transform: scale(0.25);
+    top: -200px;
+
+
+}
+.cube2 div{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: anim2 3s linear infinite;
+    transform: rotateX(-20deg) rotateY(25deg);
+}
+@keyframes anim2{
+    0%{
+        transform: rotateX(20deg) rotateY(360deg)
+    }
+    100%{
+        transform: rotateX(20deg) rotateY(0deg)
+    }
+}
+.cube2 .mini mspan{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--colour);
+    transform-style: preserve-3d;
+    transform: rotateY(calc(90deg*var(--i)))translateZ(299px);
+    transition: .5s;
+}
+
+.cube2 .mini mspan{
+    background: transparent;
+    border: 20px solid blue;
+    box-shadow: 0px 0px 25px black;
+}
+div.cube2 div.mini mspan.mtop{
+    transform: rotateX(90deg)
+    translateZ(305px);
+
+
+}
+
+.cube2 .mini mspan.mbottom{
+    transform: rotateX(90deg)
+    translateZ(-305px);
+
+
+
+}
+.cube2 .mini .mtop::before{
+    content: "";
+    position: absolute;
+    inset: -50px;
+    transform: translateZ(-650px);
+
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(60px)
+}
+.say{
+    justify-content: center;
+    align-items: center;
+    transform: translateX(210px) translateY(200px);
+
 }
